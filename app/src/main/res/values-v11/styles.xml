@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="StoreTheme" parent="android:Theme.Holo">
+        <item name="android:actionBarStyle">@style/StoreActionBar</item>
+    </style>
+
+    <style name="StoreActionBar" parent="android:Widget.Holo.ActionBar">
+        <item name="android:background">@drawable/ab_background</item>
+    </style>
+</resources>

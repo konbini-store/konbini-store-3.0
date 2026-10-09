@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- base colour -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FF1A1A1A" />
+        </shape>
+    </item>
+    <!-- repeating line texture -->
+    <item>
+        <bitmap
+            android:src="@drawable/ab_texture_tile"
+            android:tileMode="repeat" />
+    </item>
+    <!-- thin divider at the bottom -->
+    <item android:gravity="bottom">
+        <shape android:shape="rectangle">
+            <size android:height="1dp" />
+            <solid android:color="#66000000" />
+        </shape>
+    </item>
+</layer-list>
