@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "io.github.konbini.store3"
-        minSdk = 11
+        minSdk = 14
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
@@ -35,4 +35,6 @@ android {
 
 dependencies {
     testImplementation(libs.junit)
+    implementation("com.loopj.android:android-async-http:1.4.9")
+    implementation("com.android.support:support-v4:13.0.0")
 }
