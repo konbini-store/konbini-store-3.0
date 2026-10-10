@@ -21,6 +21,7 @@ public class App {
     public String packageId;
     public String icon;
     public ArrayList<String> screenshots = new ArrayList<>();
+    public String tagline;
     public String description;
     public final SparseArray<AppVersion> versions = new SparseArray<>();
     public String categoryId;
@@ -59,12 +60,14 @@ public class App {
         this.fullApp = true;
     }
 
-    public App(int id, String name, String author, String packageId, String description,
-               String icon, JSONArray screenshots, JSONArray versions, boolean featured) {
+    public App(int id, String name, String author, String packageId, String tagline,
+               String description, String icon, JSONArray screenshots, JSONArray versions,
+               boolean featured) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.packageId = packageId;
+        this.tagline = tagline;
         this.description = description;
         this.icon = icon;
         this.fullApp = (screenshots != null && versions != null && description != null);

@@ -8,30 +8,19 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.graphics.PorterDuff;
-import android.media.Image;
 import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
 import io.github.konbini.store3.R;
 import io.github.konbini.store3.api.Api;
 import io.github.konbini.store3.api.AppShort;
@@ -62,7 +51,9 @@ public class MainActivity extends Activity {
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
             AppShort app = (AppShort) parent.getItemAtPosition(position);
-            // open the app details activity for app.packageName
+            Intent intent = new Intent(this, AppDetailsActivity.class);
+            intent.putExtra("package_name", app.packageName);
+            startActivity(intent);
         });
 
         int[] pressIds = {
@@ -168,14 +159,13 @@ public class MainActivity extends Activity {
         MenuItem item = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) item.getActionView();
         if (searchView != null) {
-            String[] from = {"suggestion"};
             int[] to = {android.R.id.text1};
 
             SimpleCursorAdapter adapter = new SimpleCursorAdapter(
                     this,
                     android.R.layout.simple_dropdown_item_1line,
                     null,
-                    from,
+                    new String[]{"suggestion"},
                     to,
                     0
             );

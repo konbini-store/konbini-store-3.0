@@ -210,6 +210,7 @@ public class Database {
                             cursor.getString(cursor.getColumnIndex("name")),
                             cursor.getString(cursor.getColumnIndex("author")),
                             cursor.getString(cursor.getColumnIndex("package_name")),
+                            cursor.getString(cursor.getColumnIndex("short_description")),
                             cursor.getString(cursor.getColumnIndex("full_description")),
                             cursor.getString(cursor.getColumnIndex("icon")),
                             screenshots,

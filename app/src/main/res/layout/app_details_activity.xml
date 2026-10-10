@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="#3d3d3d"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/app_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="14dp"
+                android:layout_marginStart="14dp"
+                android:orientation="vertical">
+
+                <io.github.konbini.store3.ui.CustomFontTextView
+                    android:id="@+id/app_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:customFontFamily="droidsans_bold.ttf"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Demo app"
+                    android:singleLine="true" />
+
+                <io.github.konbini.store3.ui.CustomFontTextView
+                    android:id="@+id/app_developer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#AAAAAA"
+                    app:customFontFamily="droidsans.ttf"
+                    android:textSize="16sp"
+                    android:text="Konbini"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#879153" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="100"
+            android:gravity="center"
+            android:background="#3d3d3d"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp">
+
+            <Button
+                android:visibility="visible"
+                android:layout_weight="38"
+                android:id="@+id/open_app_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OPEN" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"/>
+
+            <Button
+                android:layout_weight="38"
+                android:id="@+id/install_uninstall_app_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INSTALL" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#879153" />
+    </LinearLayout>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="#ededed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:id="@+id/screenshots_scrollview"
+                android:layout_width="match_parent"
+                android:background="#b0b0b0"
+                android:layout_height="200dp"
+                >
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:adjustViewBounds="true"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/ph_screenshot_vertical" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/ph_screenshot_vertical" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:adjustViewBounds="true"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:src="@drawable/ph_screenshot_vertical" />
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignTop="@+id/versions_row"
+                    android:layout_alignBottom="@+id/versions_row"
+                    android:background="@drawable/texture_tile_light" />
+
+                <LinearLayout
+                    android:id="@+id/versions_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="100"
+                    android:gravity="center"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_weight="45"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <RatingBar
+                            android:id="@+id/rating"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:numStars="5"
+                            android:stepSize="0.5"
+                            android:rating="4.5" />
+
+                        <io.github.konbini.store3.ui.CustomFontTextView
+                            android:id="@+id/versions_api_text"
+                            app:customFontFamily="droidsans.ttf"
+                            android:layout_width="wrap_content"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:layout_height="wrap_content"
+                            android:text="Versions: 1.0.0 - 9.3.5\nAndroid 1.5 - 5.0+" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="45"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp">
+
+                        <io.github.konbini.store3.ui.CustomFontTextView
+                            android:id="@+id/size_compatible_text"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            app:customFontFamily="droidsans.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1,000+ reviews\nDownloads: 15,000+\nCompatible: yes" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <io.github.konbini.store3.ui.CustomFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DESCRIPTION"
+                    android:fontFamily="@font/droidsans_bold"
+                    app:customFontFamily="droidsans_bold.ttf"
+                    android:typeface="serif"
+                    android:textColor="#98ac39"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <io.github.konbini.store3.ui.CustomFontTextView
+                    android:id="@+id/tagline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/droidserif_bold"
+                    android:textColor="#4d4d4d"
+                    app:customFontFamily="droidserif_bold.ttf"
+                    android:text="Are you ready?" />
+
+                <io.github.konbini.store3.ui.CustomFontTextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/droidserif"
+                    android:textColor="#4d4d4d"
+                    app:customFontFamily="droidserif.ttf"
+                    android:text="This is a very cool app that you should check out. I worked very hard on it. Thanks. Take care. Bye." />
+
+                <io.github.konbini.store3.ui.CustomFontTextView
+                    android:id="@+id/toggle_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/droidserif"
+                    android:textColor="#7d7d7d"
+                    android:gravity="end"
+                    app:customFontFamily="droidserif.ttf"
+                    android:text="expand" />
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ababab"
+                android:layout_marginTop="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <io.github.konbini.store3.ui.CustomFontTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/droidsans_bold"
+                            android:textColor="#4d4d4d"
+                            app:customFontFamily="droidsans_bold.ttf"
+                            android:text="Versions " />
+
+                        <io.github.konbini.store3.ui.CustomFontTextView
+                            android:id="@+id/version_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/droidsans"
+                            android:textColor="#7d7d7d"
+
+                            app:customFontFamily="droidsans.ttf"
+                            android:text="(14)" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24sp"
+                        android:layout_height="24sp"
+                        android:scaleType="fitXY"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/chevron_right_24px_dark"
+                        android:layout_marginEnd="8dp"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ababab"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <io.github.konbini.store3.ui.CustomFontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    app:customFontFamily="droidsans.ttf"
+                    android:text="Your review"
+                    />
+
+                <RatingBar
+                    android:id="@+id/own_reviewbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

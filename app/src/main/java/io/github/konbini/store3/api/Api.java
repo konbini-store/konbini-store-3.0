@@ -225,7 +225,7 @@ public class Api {
     }
 
     public ArrayList<AppShort> getAuthorApps(Context context, String author) {
-        if (author == null || author.length() == 0) return new ArrayList<>();
+        if (author == null || author.isEmpty()) return new ArrayList<>();
         return Database.getAppsByAuthor(context, author);
     }
 
@@ -320,5 +320,25 @@ public class Api {
         });
         Log.d("Api", "getApp: " + (app[0] == null ? "null" : app[0].versions.size()));
         return success[0] ? app[0] : null;
+    }
+
+    public App getAppByPackage(Context context, final String package_name) {
+        if (!Database.hasApp(context, package_name)) return null;
+
+        App app = null;
+
+        try {
+            app = Database.getAppByPackage(context, package_name);
+            if (app != null && app.fullApp)
+                return app;
+            else
+                Log.w("Api", "Skipping short app");
+        } catch (Exception e) {
+            Log.w("Api", "Ignoring invalid cached app response", e);
+        }
+
+        if (app == null) return app;
+
+        return getApp(context, app.id);
     }
 }

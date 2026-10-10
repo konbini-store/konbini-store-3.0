@@ -12,7 +12,8 @@ android {
     defaultConfig {
         applicationId = "io.github.konbini.store3"
         minSdk = 14
-        targetSdk = 37
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk = 14
         versionCode = 1
         versionName = "1.0"
     }

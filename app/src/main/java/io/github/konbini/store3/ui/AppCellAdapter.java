@@ -21,7 +21,7 @@ public class AppCellAdapter extends BaseAdapter {
 
     public AppCellAdapter(Context context, List<AppShort> items) {
         this.context = context;
-        this.items = items != null ? new ArrayList<>(items) : new ArrayList<AppShort>();
+        this.items = items != null ? new ArrayList<>(items) : new ArrayList<>();
     }
 
     @Override public int getCount() { return items.size(); }
